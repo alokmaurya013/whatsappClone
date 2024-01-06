@@ -1,9 +1,11 @@
 import { Server } from 'socket.io';
-const io=new Server(9000,{
+const PORT=process.env.PORT||9000;
+const io=new Server(PORT,{
     cors:{
        origin:'https://whatsappclone013.netlify.app/',
     },
 })
+
 let users=[];
 
 const addUser=(userData,socketId)=>{
